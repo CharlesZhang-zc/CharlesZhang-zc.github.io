@@ -1,0 +1,383 @@
+{
+  "basicInfo": {
+    "name": "张超",
+    "title": "算法工程师",
+    "location": "上海/杭州 · 中国",
+    "summary": "主观能动性是人与ai之间最后的藩篱",
+    "avatar": "assets/portrait.jpg",
+    "contacts": [
+      {
+        "type": "email",
+        "label": "邮箱",
+        "value": "zc15000081891@gmail.com",
+        "href": "mailto:zc15000081891@gmail.com"
+      },
+      {
+        "type": "github",
+        "label": "GitHub",
+        "value": "charleszhang-zc.github.io",
+        "href": "https://charleszhang-zc.github.io/"
+      },
+      {
+        "type": "wechat",
+        "label": "微信",
+        "value": "zc2401278010"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "project-l2s",
+      "name": "影视合集智能拆短",
+      "role": "算法开发负责人",
+      "period": "2025.04 - 至今",
+      "summary": "基于多模态视频理解的影视剧长拆短算法；半年营收0.72亿；0-1推动算法实现+落地；效果接近内部初版人工剪辑；获得业务方spot bouns奖项",
+      "tags": [],
+      "highlight": true,
+      "contentBlocks": [
+        {
+          "type": "text",
+          "text": [
+            "项目背景：随着用户日益偏好短平快的内容消费模式，经典影视剧的传播力面临挑战。为此，我们开发影视剧智能“长拆短”算法，在保留原剧叙事逻辑与核心魅力的基础上，将其智能剪辑为紧凑的短视频片段。这一创新旨在激活存量内容价值，通过付费点播（IAP）及广告变现（IAA）实现商业转化，助力经典内容在新媒体时代焕发新生。"
+          ]
+        },
+        {
+          "type": "text",
+          "html": [
+            "业务收益：通过IAP/IAA，<strong>半年时间实现从零到0.72亿收入的突破</strong>（Q3/Q4分别为2195w/4977w），内部评分接近内部人工粗剪效果"
+          ]
+        },
+        {
+          "type": "row",
+          "columns": 2,
+          "items": [
+            {
+              "type": "image",
+              "src": "assets/l2s_workflow.png",
+              "alt": "智能拆短管线示意图",
+              "caption": "智能拆短管线示意图"
+            },
+            {
+              "type": "image",
+              "src": "assets/l2s_pugc.png",
+              "alt": "知识密集PUGC内容拆短改造",
+              "caption": "知识密集PUGC内容拆短改造"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "project-screenplay_recovery",
+      "name": "影视剧剧本还原",
+      "role": "算法开发负责人",
+      "period": "2025.04 - 至今",
+      "summary": "对影视剧台词角色，实现在74%召回率下约95%的角色识别正确率；实现完整的剧本训练数据预标注管线",
+      "highlight": true,
+      "tags": [],
+      "contentBlocks": [
+        {
+          "type": "text",
+          "text": [
+            "项目背景：当前mllm模型在影视剧理解领域的一个硬伤是无法准确识别其中的角色信息。考虑到现有mllm有限的窗长，若要进行稍微细节一些的理解只能把长视频进行切割成片段，逐个理解，这更加剧了其在角色理解方面的短板。"
+          ]
+        },
+        {
+          "type": "row",
+          "columns": 2,
+          "items": [
+            {
+              "type": "image",
+              "src": "assets/asd_slice1.mp4",
+              "alt": "角色识别Workflow",
+              "caption": "角色识别Workflow"
+            },
+            {
+              "type": "image",
+              "src": "assets/character_pairs.png",
+              "alt": "角色-identity识别结果",
+              "caption": "角色-identity识别结果"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "html": [
+            "角色理解：对影视剧台词角色，实现在74%召回率下约95%的角色识别正确率；助力ai搜推在业务方benchmark上实现正确率65% --> 70%的提升；助力拆短算法在脱水、花字效果显著提升"
+          ]
+        },
+        {
+          "type": "row",
+          "columns": 2,
+          "items": [
+            {
+              "type": "image",
+              "src": "assets/character_workflow.png",
+              "alt": "角色识别Workflow",
+              "caption": "角色识别Workflow"
+            },
+            {
+              "type": "image",
+              "src": "assets/character_acc.png",
+              "alt": "角色识别正确率统计（on 《唐探》）",
+              "caption": "角色识别正确率"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "html": [
+            "剧本还原：开发了一整套剧本处理管线，实现<strong>剧本切片与对应影视剧视频切片的对应</strong>（下图为数据预处理管线，获取预标注的视频-剧本切片对）；推动与标注团队，标注了一组视频切片-gt剧本切片的数据。使用视频切片-gt剧本切片，叠加台词角色理解结果，finetune了一版vlm模型，实现带角色理解的剧本还原能力。"
+          ]
+        },
+        {
+          "type": "row",
+          "columns": 2,
+          "items": [
+            {
+              "type": "image",
+              "src": "assets/screenplay_process_workflow.png",
+              "alt": "影视剧本数据处理管线",
+              "caption": "影视剧本数据处理管线"
+            },
+            {
+              "type": "image",
+              "src": "assets/screenplay_annotation.png",
+              "alt": "剧本预标注数据&人工矫正结果",
+              "caption": "剧本预标注数据&人工矫正结果"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "project-ai_search",
+      "name": "影视剧ai搜推",
+      "role": "算法开发负责人",
+      "period": "2025.04 - 至今",
+      "summary": "方舟推搜业务；benchmark正确率 61% -> Ours 70%（+9%）；咪咕已经接入；Force大会上发布AI搜推和长视频搜推",
+      "tags": [],
+      "contentBlocks": [
+        {
+          "type": "text",
+          "text": [
+            "项目背景：与方舟团队合作开发的视频智能搜索推荐能力，在大客户咪咕那里表现为一个长视频的ai助手，可以帮助用户智能搜索想看类型的剧、回顾视频内容、解答没看懂的地方以及同类型剧目推荐等等。搜广推领域一般的管线是特征工程->召回->粗排->精排，我们算法实际是起到第一个环节“特征工程”作用。"
+          ]
+        },
+        {
+          "type": "text",
+          "html": [
+            "算法收益：已<a href=\"https://bytedance.larkoffice.com/wiki/ZYadwS7VWieZS6kWFyjc5akznXc?from=from_parent_docx\">上线字节方舟平台</a>，支持实现自然语言提示词下的精彩视频片段回答，跨集检索等功能；业务benchmark正确率 61% -> Ours 70%（+9%）；首个大客户咪咕已经接入；在2025年Force大会上发布AI搜推和长视频搜推"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "project-evo",
+      "name": "空间视频重建(EvolvingGS算法)",
+      "role": "4DGS动态重建算法开发负责人",
+      "period": "2024.02 - 2025.08",
+      "summary": "独立0-1创新研发了一版4DGS空间视频重建算法；于图形学顶会SIGGRAPH ASIA '26发表两篇文章（一篇一作/一篇二作）；两年累计ToB营收约300w，其中25年营收200w，推进中项目的预期营收~500万；获央视报道",
+      "tags": [],
+      "highlight": true,
+      "contentBlocks": [
+        {
+          "type": "text",
+          "text": [
+            "项目背景：当前LBE内容制作主要依赖传统3D动画管线，大量资产依赖艺术家手工制作，成本高，制作周期长，质量良莠不齐。4DGS技术的出现在传统基于mesh的体积视频重建质量拔高了一个层级，用相关技术自动化建模人物、场景，可以在大幅降低制作成本的同时提高资产质量，是LBE行业演化的重要方向。"
+          ]
+        },
+        {
+          "type": "text",
+          "html": [
+            "算法收益：<ul><li>发明了一个二阶段的4dgs重建算法，在重建质量与时域稳定性上达到SOTA水平<li>于图形学顶会SIGGRAPH ASIA发表两篇论文，一篇一作，一篇二作<li>空间视频标准提案：一项VDMC/GSC提案</li><li>两项发明专利提案通过（一项主发明人）</li><li>两年累计ToB营收约300w，其中25年营收200w，推进中项目的预期营收~500万</li><li>四篇PR <a href=\"https://mp.weixin.qq.com/s/VOxY63TC78q7IQx_TP6q1g\">[1]</a> <a href=\"https://mp.weixin.qq.com/s/WA7rjQK92pFjh-9HS1W3eA\">[2]</a> <a href=\"https://mp.weixin.qq.com/s/62UTQVk93Xb3RbJhTHRSUw\">[3]</a> <a href=\"https://www.infoq.cn/article/0HxfdOUMoogR9hLGaaUi\">[4]</a>，获得央视报道，登录火山force大会展示</li></ul>"
+          ]
+        },
+        {
+          "type": "video",
+          "iframeSrc": "https://www.youtube.com/embed/Ig9TSLuYLZI",
+          "title": "Main Demo"
+        },
+        {
+          "type": "row",
+          "columns": 2,
+          "items": [
+            {
+              "type": "video",
+              "iframeSrc": "https://ddd",
+              "title": "对超快速动作鲁棒"
+            },
+            {
+              "type": "video",
+              "iframeSrc": "https://ddd",
+              "title": "结合全息显示屏"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "html": [
+            "算法哲学：对于如human performance这种重建任务，一个固定高斯模型是无法拟合在一个长的时域区间内每一个帧的appearance的，因为运动人体本身是一个子自遮挡/拓扑变换非常严重的case。幸运的是不同于mesh，高斯是一种非常松耦合的表征，我们可以在每一帧增添/删减少量高斯点来拟合新出现/消失的objects和details。"
+          ]
+        },
+        {
+          "type": "row",
+          "columns": 2,
+          "items": [
+            {
+              "type": "image",
+              "src": "assets/evo_quantitative_comp.png",
+              "alt": "Quantitative Comparison",
+              "caption": "Quantitative Comparison"
+            },
+            {
+              "type": "image",
+              "src": "assets/evo_gop_free.png",
+              "alt": "重建质量与GoP长度解耦",
+              "caption": "重建质量与GoP长度解耦"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "project-gt_soft",
+      "name": "vlm多任务GT Soft强化学习",
+      "role": "多任务训练框架开发负责人",
+      "period": "2025.09 - 2025.11",
+      "summary": "TempSamp-R1算法拓展；多模态模型多任务联合后训练；",
+      "tags": [],
+      "contentBlocks": [
+        {
+          "type": "text",
+          "html": [
+            "将<a href=\"https://arxiv.org/pdf/2509.18056\">TempSamp-R1</a>算法拓展到Temporal Grounding、Object Tracking、VQA、Spatial Grounding、Image GQA等多个任务上进行联合训练，在所有任务上都取得指标提升（具体结果参考下表），同时结合TempSamp-R1和CPPO剪枝（另一同学实现）将训练耗时在GRPO的基础上降低约68%"
+          ]
+        },
+        {
+          "type": "image",
+          "src": "assets/gt_soft_eval.png",
+          "alt": "vlm多任务GT Soft强化学习评估结果",
+          "caption": "vlm多任务GT Soft强化学习评估结果"
+        }
+      ]
+    },
+    {
+      "id": "project-体积视频/3D Avatar",
+      "name": "体积视频重建",
+      "role": "全套采集&ISP系统实现 & 非刚性Tracking算法开发负责人",
+      "period": "2022.06 - 2023.09",
+      "summary": "工业相机软硬件全套同步采集系统实现，解决相机时间戳漂移问题；非刚性tracking算法实现，效果基本对齐行业SOTA；于SIGGRAPH ASIA '23发表一篇论文，共一",
+      "tags": [],
+      "contentBlocks": [
+        {
+          "type": "text",
+          "html": [
+            "实现软硬结合的全套多相机同步采集+ISP系统：<ul><li>从0到1实现一套包含采集同步、图像前处理、深度推理、前景预测等功能的采集系统，当前支持20相机同步，但可轻易拓展到更多相机设备</li><li>所有原CPU侧算法（如debayer、rectify、resize）全部用CUDA重写并优化，降低CPU的负载90%以上，解耦对CPU的性能需求；采用异步管线的方式连接整个处理流程，同步、ISP、Face预测、深度推理、前景预测以及传输模块之间通过独立队列异步并发（如下图），提高GPU并行效率，减少device与host间数据交换</li></ul>"
+          ]
+        },
+        {
+          "type": "row",
+          "columns": 2,
+          "items": [
+            {
+              "type": "image",
+              "src": "assets/vv_recon_ppl.png",
+              "alt": "体积视频前端采集推理管线",
+              "caption": "体积视频前端采集推理管线"
+            },
+            {
+              "type": "image",
+              "src": "assets/vv_capture_ppl.png",
+              "alt": "多相机同步采集示意图",
+              "caption": "多相机同步采集示意图"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "html": [
+            ""
+          ]
+        }
+      ]
+    }
+  ],
+  "achievements": [
+    {
+      "year": "2025",
+      "title": "EvolvingGS: Stable Volumetric Video via High-Fidelity Evolving 3D Guassian Reconstruction",
+      "type": "论文/一作",
+      "venue": "SIGGRAPH ASIA '26 Tech Comm",
+      "link": "https://arxiv.org/pdf/2503.05162",
+      "tags": ["4DGS", "LBE", "Volumetric Video", "GoP-free Reconstruction"]
+    },
+    {
+      "year": "2025",
+      "title": "Disentangled Gaussian Splatting: High-Fidelity Relightable Volumetric Video through Geometry-Appearance Decoupling",
+      "type": "论文/二作",
+      "venue": "SIGGRAPH ASIA '26 Tech Comm",
+      "link": "https://dl.acm.org/doi/10.1145/3757376.3771406",
+      "tags": ["Relightable Volumetric Video", "Geometry Modeling", "4DGS"]
+    },
+    {
+      "year": "2023",
+      "title": "Live4D: A Real-time Capture System for Streamable Volumetric Video",
+      "type": "论文/共一",
+      "venue": "SIGGRAPH ASIA '23 Tech Comm",
+      "link": "https://dl.acm.org/doi/abs/10.1145/3610543.3626178",
+      "tags": ["Volumetric Video", "Real-time Human Performance Modeling"]
+    },
+    {
+      "year": "2021",
+      "title": "Evolution of transaction pattern in Ethereum: A temporal graph perspective",
+      "type": "论文/二作",
+      "venue": "Transactions on Computational Social Systems(TCSS)",
+      "link": "https://ieeexplore.ieee.org/abstract/document/9540956",
+      "tags": ["Volumetric Video", "Real-time Human Performance Modeling"]
+    },
+    {
+      "year": "2024",
+      "title": "基于形变与修复的时域高斯重建方法",
+      "type": "专利/第一发明人"
+    },
+    {
+      "year": "2024",
+      "title": "环拍视频生成高质量贴图模型",
+      "type": "专利/第一发明人"
+    },
+    {
+      "year": "2024",
+      "title": "一种用于实时场景的通用同步采集系统",
+      "type": "专利/第一发明人"
+    },
+    {
+      "year": "2024",
+      "title": "其他非第一发明人专利4项",
+      "type": "专利"
+    }
+  ],
+  "education": [
+    {
+      "school": "字节跳动",
+      "degree": "算法工程师",
+      "period": "2021 - now",
+      "location": "上海",
+      "details": "体积视频；非刚性配准；4DGS；多模态大模型"
+    },
+    {
+      "school": "复旦大学",
+      "degree": "电子工程 · 硕士",
+      "period": "2018 - 2021",
+      "location": "上海",
+      "details": "Panoramic Video Streaming"
+    },
+    {
+      "school": "上海大学",
+      "degree": "通信工程 · 学士",
+      "period": "2014 - 2018",
+      "location": "上海",
+      "details": "VR; Action Detection"
+    }
+  ]
+}

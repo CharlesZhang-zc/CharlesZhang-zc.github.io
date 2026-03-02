@@ -1,0 +1,433 @@
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(191, 219, 254, 0.6), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(241, 245, 249, 0.9), #f8fafc 70%);
+  min-height: 100vh;
+}
+
+.section {
+  scroll-margin-top: 5rem;
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.15;
+  background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.12), transparent 55%);
+}
+
+.section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 9999px;
+  background-color: #0f172a;
+  color: #f9fafb;
+  font-size: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  z-index: 50;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus-visible {
+  top: 0.75rem;
+  outline: none;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0;
+  color: #475569;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.15rem;
+  width: 0;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #3b82f6, #22d3ee);
+  transition: width 0.18s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #0f172a;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  width: 100%;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  border: 1px solid rgba(148, 163, 184, 0.9);
+  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.16);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  z-index: 40;
+}
+
+.back-to-top--visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: #3b82f6;
+  color: #f9fafb;
+  box-shadow: 0 22px 70px rgba(37, 99, 235, 0.35);
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -0.4rem;
+  top: 0.65rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  border: 2px solid rgba(37, 99, 235, 0.9);
+  background: radial-gradient(circle at 30% 30%, #bfdbfe, #1d4ed8);
+  box-shadow: 0 0 0 4px rgba(191, 219, 254, 0.65);
+}
+
+@media (min-width: 768px) {
+  .timeline-dot {
+    left: -0.55rem;
+  }
+}
+
+/* 保底：确保 section 内元素不会被 ::before 遮挡 */
+.section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 工作项目 折叠面板样式 */
+.projects-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .projects-accordion {
+    gap: 1rem;
+  }
+}
+
+/* contentBlocks 行布局：小屏单列，md+ 并排 */
+.content-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .content-row {
+    align-items: stretch;
+  }
+}
+
+/* 折叠内容区域动画：max-height + opacity + transform */
+.accordion-panel {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-4px);
+  visibility: hidden;
+  overflow: hidden;
+  transition: max-height 0.24s ease, opacity 0.24s ease, transform 0.24s ease;
+  will-change: max-height, opacity, transform;
+}
+
+.accordion-item--open .accordion-panel {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+/* 箭头图标旋转与高亮 */
+.accordion-icon {
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.accordion-item--open .accordion-icon {
+  transform: rotate(180deg);
+  background-color: rgba(191, 219, 254, 0.9);
+  color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.3);
+}
+
+/* 标题下方简介：最多两行省略 */
+.accordion-summary {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 内容块卡片与表格样式 */
+.content-block {
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+@media (min-width: 768px) {
+  .content-block {
+    padding: 1.1rem 1.25rem;
+  }
+}
+
+/* 媒体内容（视频、图表）：去掉内边距，开启裁切以支持轻微放大 */
+.content-block--media {
+  padding: 0;
+  overflow: hidden;
+  background-color: #f8fafc;
+}
+
+/* 图片内容块：图片自适应完整显示，不裁剪 */
+.content-block--image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* 文本块多段落间距 */
+.content-block--text p + p {
+  margin-top: 0.5rem;
+}
+
+/* 文本块中的列表与链接样式 */
+.content-block--text ul,
+.content-block--text ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.content-block--text li + li {
+  margin-top: 0.25rem;
+}
+
+.content-block--text ul {
+  list-style-type: disc;
+}
+
+.content-block--text ol {
+  list-style-type: decimal;
+}
+
+.content-block--text a {
+  color: #2563eb;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(37, 99, 235, 0.45);
+  padding-bottom: 1px;
+  transition: color 0.15s ease, border-bottom-color 0.15s ease,
+    text-decoration-color 0.15s ease;
+}
+
+.content-block--text a:hover,
+.content-block--text a:focus-visible {
+  color: #1d4ed8;
+  text-decoration: underline;
+  border-bottom-color: transparent;
+}
+
+/* 表格容器：窄屏下横向滚动 */
+.content-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.content-table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.content-table th,
+.content-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.content-table thead th {
+  font-weight: 600;
+  color: #0f172a;
+  background-color: #f1f5f9;
+}
+
+.content-table tbody tr:nth-child(odd) {
+  background-color: #f8fafc;
+}
+
+.content-table tbody tr:hover {
+  background-color: #e5f0ff;
+}
+
+/* 图片尺寸预设：通过类控制最大高度 */
+.img-size-sm {
+  max-height: 240px;
+}
+
+.img-size-md {
+  max-height: 360px;
+}
+
+.img-size-lg {
+  max-height: 480px;
+}
+
+/* Lightbox：双击图片查看大图的全局预览层 */
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.lightbox-backdrop--open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 0.75rem;
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.9));
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.7);
+  padding: 0.75rem;
+  transform: scale(0.96) translateY(4px);
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.lightbox-backdrop--open .lightbox-content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.lightbox-image {
+  display: block;
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  background-color: #020617;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  background-color: rgba(248, 250, 252, 0.96);
+  color: #0f172a;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.4);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+  background-color: #e5f0ff;
+  color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.6);
+}
+
+.lightbox-close:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.lightbox-close-icon {
+  font-size: 1rem;
+}
+
+/* 重点项目标题星标样式 */
+.project-title-star {
+  margin-left: 0.5rem;
+}
+
+.project-title-star-icon {
+  color: #f59e0b;
+  font-size: 0.9rem;
+}

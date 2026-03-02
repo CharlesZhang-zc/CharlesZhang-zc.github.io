@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>个人主页 · 张超</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="个人主页 · 张超" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb'
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+  <a href="#main-content" class="skip-link">跳到主要内容</a>
+
+  <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-2">
+        <div class="flex h-9 w-9 items-center justify-center rounded-full bg-primary-600 text-sm font-semibold text-white shadow-lg shadow-primary-600/40">
+          ZC
+        </div>
+        <div class="leading-tight">
+          <p class="text-sm font-semibold tracking-wide">张超</p>
+          <p class="text-xs text-slate-500">多模态算法工程师</p>
+        </div>
+      </div>
+      <nav aria-label="页面导航">
+        <ul class="flex items-center gap-4 text-xs md:gap-6 md:text-sm">
+          <li><a href="#about" class="nav-link">关于</a></li>
+          <li><a href="#projects" class="nav-link">工作项目</a></li>
+          <li><a href="#achievements" class="nav-link">学术成果</a></li>
+          <li class="hidden sm:list-item"><a href="#education" class="nav-link">学历 & 职业履历</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="mx-auto max-w-5xl space-y-20 px-4 pb-20 pt-16">
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <!-- 英雄区：桌面端头像与基础信息同排，移动端自动上下堆叠 -->
+      <div class="grid gap-6 sm:gap-8 items-start md:grid-cols-[auto,1fr] md:items-center">
+        <div class="relative h-28 w-28 overflow-hidden rounded-full border border-slate-200 bg-white shadow-lg shadow-slate-300/70">
+          <img id="avatar" src="avatar-placeholder.svg" alt="张超的头像占位图" class="h-full w-full object-cover" />
+        </div>
+        <div>
+          <h1 id="about-heading" class="text-3xl font-semibold tracking-tight md:text-4xl">
+            <span id="about-name">张超</span>
+          </h1>
+          <p id="about-title" class="mt-2 text-lg text-slate-700">
+            产品设计师 &amp; 前端工程负责人
+          </p>
+          <p id="about-location" class="mt-1 text-sm text-slate-500">
+            上海 · 中国
+          </p>
+          <p id="about-summary" class="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+            这里是示例简介。实际使用时，可在 data.json 中替换为你的个人介绍。
+          </p>
+          <div id="contact-list" class="mt-5 flex flex-wrap gap-3" aria-label="联系方式"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section" aria-labelledby="projects-heading">
+      <div class="mb-6 flex items-end justify-between gap-4">
+        <div>
+          <h2 id="projects-heading" class="text-2xl font-semibold tracking-tight">
+            工作项目
+          </h2>
+          <p class="mt-1 text-sm text-slate-500">
+            按时间逆序排列
+          </p>
+        </div>
+      </div>
+      <div id="projects-grid" class="projects-accordion space-y-4 md:space-y-5" aria-live="polite">
+        <!-- 由 script.js 动态注入项目卡片 -->
+      </div>
+    </section>
+
+    <section id="achievements" class="section" aria-labelledby="achievements-heading">
+      <div class="mb-4 flex items-end justify-between gap-4">
+        <div>
+          <h2 id="achievements-heading" class="text-2xl font-semibold tracking-tight">
+            学术成果
+          </h2>
+          <p class="mt-1 text-sm text-slate-500">
+            展示论文、专利等成果
+          </p>
+        </div>
+      </div>
+      <ul id="achievements-list" class="space-y-4" aria-live="polite">
+        <!-- 由 script.js 动态注入学术成果列表 -->
+      </ul>
+    </section>
+
+    <section id="education" class="section" aria-labelledby="education-heading">
+      <div class="mb-4 flex items-end justify-between gap-4">
+        <div>
+          <h2 id="education-heading" class="text-2xl font-semibold tracking-tight">
+            学历 & 职业履历
+          </h2>
+          <p class="mt-1 text-sm text-slate-500">
+            时间逆序展示教育与工作经历。
+          </p>
+        </div>
+      </div>
+      <ol id="education-timeline" class="relative border-l border-slate-200 pl-4 md:pl-6" aria-live="polite">
+        <!-- 由 script.js 动态注入学历时间轴 -->
+      </ol>
+    </section>
+  </main>
+
+  <button id="back-to-top" type="button" class="back-to-top" aria-label="返回顶部">
+    <i class="ri-arrow-up-line text-lg"></i>
+  </button>
+
+  <footer class="border-t border-slate-200 bg-white/80">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 text-xs text-slate-500">
+      <span>© <span id="footer-year"></span> 个人主页 · 张超</span>
+      <span>基于 HTML · CSS · JavaScript · ECharts · Tailwind 构建</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
