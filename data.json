@@ -27,52 +27,11 @@
   },
   "projects": [
     {
-      "id": "project-l2s",
-      "name": "影视合集智能拆短",
-      "role": "算法开发负责人",
-      "period": "2025.04 - 至今",
-      "summary": "基于多模态视频理解的影视剧长拆短算法；半年营收0.72亿；0-1推动算法实现+落地；效果接近内部初版人工剪辑；获得业务方spot bouns奖项",
-      "tags": [],
-      "highlight": true,
-      "contentBlocks": [
-        {
-          "type": "text",
-          "text": [
-            "项目背景：随着用户日益偏好短平快的内容消费模式，经典影视剧的传播力面临挑战。为此，我们开发影视剧智能“长拆短”算法，在保留原剧叙事逻辑与核心魅力的基础上，将其智能剪辑为紧凑的短视频片段。这一创新旨在激活存量内容价值，通过付费点播（IAP）及广告变现（IAA）实现商业转化，助力经典内容在新媒体时代焕发新生。"
-          ]
-        },
-        {
-          "type": "text",
-          "html": [
-            "业务收益：通过IAP/IAA，<strong>半年时间实现从零到0.72亿收入的突破</strong>（Q3/Q4分别为2195w/4977w），内部评分接近内部人工粗剪效果"
-          ]
-        },
-        {
-          "type": "row",
-          "columns": 2,
-          "items": [
-            {
-              "type": "image",
-              "src": "assets/l2s_workflow.png",
-              "alt": "智能拆短管线示意图",
-              "caption": "智能拆短管线示意图"
-            },
-            {
-              "type": "image",
-              "src": "assets/l2s_pugc.png",
-              "alt": "知识密集PUGC内容拆短改造",
-              "caption": "知识密集PUGC内容拆短改造"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "project-screenplay_recovery",
       "name": "影视剧剧本还原",
       "role": "算法开发负责人",
       "period": "2025.04 - 至今",
-      "summary": "对影视剧台词角色，实现在74%召回率下约95%的角色识别正确率；实现完整的剧本训练数据预标注管线",
+      "summary": "对影视剧台词角色，实现在74%召回率下约95%的角色识别正确率；实现完整的剧本训练数据预标注管线；帮助“拆短”、“ai搜推”业务实现阶跃式提升",
       "highlight": true,
       "tags": [],
       "contentBlocks": [
@@ -151,32 +110,10 @@
       ]
     },
     {
-      "id": "project-ai_search",
-      "name": "影视剧ai搜推",
-      "role": "算法开发负责人",
-      "period": "2025.04 - 至今",
-      "summary": "方舟推搜业务；benchmark正确率 61% -> Ours 70%（+9%）；咪咕已经接入；Force大会上发布AI搜推和长视频搜推",
-      "tags": [],
-      "contentBlocks": [
-        {
-          "type": "text",
-          "text": [
-            "项目背景：与方舟团队合作开发的视频智能搜索推荐能力，在大客户咪咕那里表现为一个长视频的ai助手，可以帮助用户智能搜索想看类型的剧、回顾视频内容、解答没看懂的地方以及同类型剧目推荐等等。搜广推领域一般的管线是特征工程->召回->粗排->精排，我们算法实际是起到第一个环节“特征工程”作用。"
-          ]
-        },
-        {
-          "type": "text",
-          "html": [
-            "算法收益：已<a href=\"https://bytedance.larkoffice.com/wiki/ZYadwS7VWieZS6kWFyjc5akznXc?from=from_parent_docx\">上线字节方舟平台</a>，支持实现自然语言提示词下的精彩视频片段回答，跨集检索等功能；业务benchmark正确率 61% -> Ours 70%（+9%）；首个大客户咪咕已经接入；在2025年Force大会上发布AI搜推和长视频搜推"
-          ]
-        }
-      ]
-    },
-    {
       "id": "project-evo",
       "name": "空间视频重建(EvolvingGS算法)",
       "role": "4DGS动态重建算法开发负责人",
-      "period": "2024.02 - 2025.08",
+      "period": "2024.02 - 2025.10",
       "summary": "独立0-1创新研发了一版4DGS空间视频重建算法；于图形学顶会SIGGRAPH ASIA '26发表两篇文章（一篇一作/一篇二作）；两年累计ToB营收约300w，其中25年营收200w，推进中项目的预期营收~500万；获央视报道",
       "tags": [],
       "highlight": true,
@@ -190,7 +127,7 @@
         {
           "type": "text",
           "html": [
-            "算法收益：<ul><li>发明了一个二阶段的4dgs重建算法，在重建质量与时域稳定性上达到SOTA水平<li>于图形学顶会SIGGRAPH ASIA发表两篇论文，一篇一作，一篇二作<li>空间视频标准提案：一项VDMC/GSC提案</li><li>两项发明专利提案通过（一项主发明人）</li><li>两年累计ToB营收约300w，其中25年营收200w，推进中项目的预期营收~500万</li><li>四篇PR <a href=\"https://mp.weixin.qq.com/s/VOxY63TC78q7IQx_TP6q1g\">[1]</a> <a href=\"https://mp.weixin.qq.com/s/WA7rjQK92pFjh-9HS1W3eA\">[2]</a> <a href=\"https://mp.weixin.qq.com/s/62UTQVk93Xb3RbJhTHRSUw\">[3]</a> <a href=\"https://www.infoq.cn/article/0HxfdOUMoogR9hLGaaUi\">[4]</a>，获得央视报道，登录火山force大会展示</li></ul>"
+            "算法收益：<ul><li>发明了一个二阶段的4dgs重建算法，在重建质量与时域稳定性上达到SOTA水平<li><strong>于图形学顶会SIGGRAPH ASIA发表两篇论文，一篇一作，一篇二作</strong><li>空间视频标准提案：一项VDMC/GSC提案</li><li>两项发明专利提案通过（一项主发明人）</li><li><strong>两年累计ToB营收约300w</strong>，其中25年营收200w，推进中项目的预期营收~500万</li><li><strong>登陆26年春晚<a href=\"https://www.bilibili.com/video/BV18VZ3BxEsD/?spm_id_from=333.337.search-card.all.click&vd_source=1663b42816c570eef52a326cf4ed0139\">《梦底》舞台</a>（约1：30开始），实现6个“刘浩存”同台表演，获得广泛报道</strong></li><li>四篇PR <a href=\"https://mp.weixin.qq.com/s/VOxY63TC78q7IQx_TP6q1g\">[1]</a> <a href=\"https://mp.weixin.qq.com/s/WA7rjQK92pFjh-9HS1W3eA\">[2]</a> <a href=\"https://mp.weixin.qq.com/s/62UTQVk93Xb3RbJhTHRSUw\">[3]</a> <a href=\"https://www.infoq.cn/article/0HxfdOUMoogR9hLGaaUi\">[4]</a>，获得央视报道，登录火山force大会展示</li></ul>"
           ]
         },
         {
@@ -241,6 +178,69 @@
       ]
     },
     {
+      "id": "project-l2s",
+      "name": "影视合集智能拆短",
+      "role": "算法开发负责人",
+      "period": "2025.04 - 至今",
+      "summary": "基于多模态视频理解的影视剧长拆短算法；半年营收0.72亿；0-1推动算法实现+落地；效果接近内部初版人工剪辑；获得业务方spot bouns奖项",
+      "tags": [],
+      "highlight": true,
+      "contentBlocks": [
+        {
+          "type": "text",
+          "text": [
+            "项目背景：随着用户日益偏好短平快的内容消费模式，经典影视剧的传播力面临挑战。为此，我们开发影视剧智能“长拆短”算法，在保留原剧叙事逻辑与核心魅力的基础上，将其智能剪辑为紧凑的短视频片段。这一创新旨在激活存量内容价值，通过付费点播（IAP）及广告变现（IAA）实现商业转化，助力经典内容在新媒体时代焕发新生。"
+          ]
+        },
+        {
+          "type": "text",
+          "html": [
+            "业务收益：通过IAP/IAA，<strong>半年时间实现从零到0.72亿收入的突破</strong>（Q3/Q4分别为2195w/4977w），背对背打分接近内部人工粗剪效果"
+          ]
+        },
+        {
+          "type": "row",
+          "columns": 2,
+          "items": [
+            {
+              "type": "image",
+              "src": "assets/l2s_workflow.png",
+              "alt": "智能拆短管线示意图",
+              "caption": "智能拆短管线示意图"
+            },
+            {
+              "type": "image",
+              "src": "assets/l2s_pugc.png",
+              "alt": "知识密集PUGC内容拆短改造",
+              "caption": "知识密集PUGC内容拆短改造"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "project-ai_search",
+      "name": "影视剧ai搜推",
+      "role": "算法开发负责人",
+      "period": "2025.04 - 至今",
+      "summary": "方舟推搜业务；benchmark正确率 61% -> Ours 70%（+9%）；咪咕已经接入；Force大会上发布AI搜推和长视频搜推",
+      "tags": [],
+      "contentBlocks": [
+        {
+          "type": "text",
+          "text": [
+            "项目背景：与方舟团队合作开发的视频智能搜索推荐能力，在大客户咪咕那里表现为一个长视频的ai助手，可以帮助用户智能搜索想看类型的剧、回顾视频内容、解答没看懂的地方以及同类型剧目推荐等等。搜广推领域一般的管线是特征工程->召回->粗排->精排，我们算法实际是起到第一个环节“特征工程”作用。"
+          ]
+        },
+        {
+          "type": "text",
+          "html": [
+            "算法收益：已<a href=\"https://bytedance.larkoffice.com/wiki/ZYadwS7VWieZS6kWFyjc5akznXc?from=from_parent_docx\">上线字节方舟平台</a>，支持实现自然语言提示词下的精彩视频片段回答，跨集检索等功能；业务benchmark正确率 61% -> Ours 70%（+9%）；首个大客户咪咕已经接入；在2025年Force大会上发布AI搜推和长视频搜推"
+          ]
+        }
+      ]
+    },
+    {
       "id": "project-gt_soft",
       "name": "vlm多任务GT Soft强化学习",
       "role": "多任务训练框架开发负责人",
@@ -248,6 +248,12 @@
       "summary": "TempSamp-R1算法拓展；多模态模型多任务联合后训练；",
       "tags": [],
       "contentBlocks": [
+        {
+          "type": "text",
+          "text": [
+            ""
+          ]
+        },
         {
           "type": "text",
           "html": [
@@ -363,7 +369,7 @@
       "degree": "算法工程师",
       "period": "2021 - now",
       "location": "上海",
-      "details": "体积视频；非刚性配准；4DGS；多模态大模型"
+      "details": "体积视频；非刚性配准；4DGS；多模态大模型；智能剪辑"
     },
     {
       "school": "复旦大学",

@@ -363,11 +363,25 @@
         figure.appendChild(caption);
       }
 
-      // 支持双击图片查看大图
+      // 支持单击图片查看大图，并提供键盘无障碍访问
       if (lightbox && typeof lightbox.open === 'function') {
         img.style.cursor = 'zoom-in';
-        img.addEventListener('dblclick', () => {
+        img.setAttribute('role', 'button');
+        img.tabIndex = 0;
+
+        const openImagePreview = () => {
           lightbox.open(img.src, img.alt);
+        };
+
+        img.addEventListener('click', () => {
+          openImagePreview();
+        });
+
+        img.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openImagePreview();
+          }
         });
       }
 
