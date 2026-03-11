@@ -46,10 +46,9 @@
           "columns": 2,
           "items": [
             {
-              "type": "image",
-              "src": "assets/asd_slice1.mp4",
-              "alt": "角色识别Workflow",
-              "caption": "角色识别Workflow"
+              "type": "video",
+              "iframeSrc": "https://www.youtube.com/embed/YKDRtn87MMQ",
+              "title": "影视剧角色识别Demo"
             },
             {
               "type": "image",
@@ -141,12 +140,12 @@
           "items": [
             {
               "type": "video",
-              "iframeSrc": "https://ddd",
+              "iframeSrc": "https://www.youtube.com/embed/Ioztl16sj2c",
               "title": "对超快速动作鲁棒"
             },
             {
               "type": "video",
-              "iframeSrc": "https://ddd",
+              "iframeSrc": "https://www.youtube.com/embed/l8xQzMqH7-M",
               "title": "结合全息显示屏"
             }
           ]
@@ -303,7 +302,23 @@
         {
           "type": "text",
           "html": [
-            ""
+            "* 下列视频展示了我研发的非刚性tracking算法效果，左视频为同一段序列Tracking前后效果对比，右视频为在promth数据上连续~300帧Tracking，对齐精品SOTA效果"
+          ]
+        },
+        {
+          "type": "row",
+          "columns": 2,
+          "items": [
+            {
+              "type": "video",
+              "iframeSrc": "https://www.youtube.com/embed/ZhjEL7td7cU",
+              "title": "Tracking前后效果对比"
+            },
+            {
+              "type": "video",
+              "iframeSrc": "https://www.youtube.com/embed/xPJ2yNGKJ4c",
+              "title": "连续~300帧Tracking，对齐精品SOTA"
+            }
           ]
         }
       ]
